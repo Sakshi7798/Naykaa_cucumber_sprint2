@@ -24,7 +24,7 @@ public class TestDataReader {
         if (workbook == null) {
             FileInputStream fileInputStream = null;
             try {
-                fileInputStream = new FileInputStream("src/test/resources/Test_Leaf_Data.xlsx");
+                fileInputStream = new FileInputStream("src/test/resources/Sprint2.xlsx");
             } catch (FileNotFoundException e) {
                 throw new RuntimeException(e);
             }

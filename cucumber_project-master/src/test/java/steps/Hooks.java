@@ -35,3 +35,4 @@ public class Hooks {
         browserManager.getDriver().quit();
     }
 }
+}

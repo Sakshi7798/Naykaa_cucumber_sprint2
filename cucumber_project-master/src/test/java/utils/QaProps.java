@@ -16,7 +16,7 @@ public class QaProps {
         if (properties == null) {
             properties = new Properties();
             try {
-                properties.load(new FileInputStream("src/test/resources/env.properties"));
+                properties.load(new FileInputStream("cucumber_project-master/src/test/resources/env.properties"));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

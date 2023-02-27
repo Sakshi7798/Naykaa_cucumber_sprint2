@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7df41cc-6aee-472d-8c58-82b7b3c0b553" name="Changes" comment="" />
+    <list default="true" id="c7df41cc-6aee-472d-8c58-82b7b3c0b553" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/cucumber_project-master/src/test/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/cucumber_project-master/src/test/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cucumber_project-master/src/test/java/runners/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/cucumber_project-master/src/test/java/runners/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cucumber_project-master/src/test/java/steps/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/cucumber_project-master/src/test/java/steps/Hooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cucumber_project-master/src/test/java/steps/StepDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/cucumber_project-master/src/test/java/steps/StepDefinitions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cucumber_project-master/src/test/java/utils/BrowserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/cucumber_project-master/src/test/java/utils/BrowserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cucumber_project-master/src/test/java/utils/QaProps.java" beforeDir="false" afterPath="$PROJECT_DIR$/cucumber_project-master/src/test/java/utils/QaProps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cucumber_project-master/src/test/java/utils/TestDataReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/cucumber_project-master/src/test/java/utils/TestDataReader.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

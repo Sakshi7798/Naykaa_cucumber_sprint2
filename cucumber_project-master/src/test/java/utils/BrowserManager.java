@@ -12,25 +12,17 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 public class BrowserManager {
     private WebDriver driver;
 
+    private WebDriver driver;
     public WebDriver getDriver(){
         return driver;
     }
-
     public void setDriver(){
-        String browser = QaProps.getValue("browser");
-        if (browser.equals("chrome")){
-            WebDriverManager.chromedriver().setup();
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless");
-            driver = new ChromeDriver(options);
-        }else {
-            WebDriverManager.firefoxdriver().setup();
-            FirefoxOptions options = new FirefoxOptions();
-            options.addArguments("--headless");
-            driver = new FirefoxDriver(options);
-        }
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, SECONDS);
+        driver.manage().timeouts().implicitlyWait(5,SECONDS);
+
+    }
     }
 
 

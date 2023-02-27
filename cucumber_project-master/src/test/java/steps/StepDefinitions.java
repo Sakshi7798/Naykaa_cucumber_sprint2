@@ -31,56 +31,73 @@ public class StepDefinitions {
     public void before(Scenario scenario) {
         this.scenario = scenario;
     }
-
-    @Given("the user navigates to the home page")
-    public void the_user_navigates_to_the_home_page() {
+    @Given("the user navigates to the home page.")
+    public void theUserNavigatesToTheHomePage() {
         url = QaProps.getValue("url");
         driver.get(url);
-        System.out.println(1 / 0);
         data = TestDataReader.getData(scenario.getName());
     }
 
-    @Given("the user navigates to")
-    public void the_user_navigates_to() {
-        url = QaProps.getValue("url");
-        driver.get(url);
-        System.out.println(1 / 0);
-        data = TestDataReader.getData(scenario.getName());
-    }
-
-    @When("the user enter the product name")
-    public void the_user_enter_the_product_name() {
+    @When("the user enter the product name.")
+    public void theUserEnterTheProductName() {
         homePage = new HomePage(driver);
-        homePage.getSearchBox().sendKeys(data.get("TypeValue"));
+        // homePage.getSearchBox().sendKeys(data.get("TypeValue"));
+        homePage.getSearchBox().sendKeys("Lipstick");
         homePage.getSearchBox().sendKeys(Keys.ENTER);
-
     }
-
-    @Then("the product results should be displayed")
-    public void the_product_results_should_be_displayed() {
+    @Then("the product results should be displayed.")
+    public void theProductResultsShouldBeDisplayed() {
         String text = homePage.getSearchResult()
                 .getText();
-        Assert.assertEquals(text, data.get("TypeValue"));
+        //Assert.assertEquals(text, data.get("TypeValue"));
+        Assert.assertEquals(text,"Lipstick");
     }
 
-    @And("User enters {string} and {string}")
-    public void userEntersAnd(String arg0, String arg1) {
+    @Given("the user on the Nykaa homepage")
+    public void theUserOnTheNykaaHomepage() {
+        url = QaProps.getValue("url");
+        driver.get(url);
+        data = TestDataReader.getData(scenario.getName());
     }
 
-    @Given("User is on Home Page")
-    public void userIsOnHomePage() {
+    @When("the user  type {string} into the search box")
+    public void theUserTypeIntoTheSearchBox(String arg0) {
+        homePage = new HomePage(driver);
+        homePage.getSearch().sendKeys(data.get("TypeValue"));
+        homePage.getSearch().sendKeys(Keys.ENTER);
     }
 
-    @When("User Navigate to LogIn Page")
-    public void userNavigateToLogInPage() {
+    @Then("the user should see a message")
+    public void theUserShouldSeeAMessage() {
+        String text = homePage.getError().getText();
+        Assert.assertEquals(text, data.get("SearchValue"));
     }
 
-    @Then("Message displayed Login Successfully")
-    public void messageDisplayedLoginSuccessfully() {
+    @When("the user  type {string} in the search bar.")
+    public void theUserTypeInTheSearchBar(String arg0) {
+        homePage = new HomePage(driver);
+        homePage.getBox().sendKeys(data.get("TypeValue"));
+        homePage.getSearch().sendKeys(Keys.ENTER);
     }
 
-    @Given("User is logged in")
-    public void userIsLoggedIn() {
-        System.out.println("from background");
+    @Then("Verify that it Showing {int} of {int} results for masc")
+    public void verifyThatItShowingOfResultsForMasc(int arg0, int arg1) {
+        String text = homePage.getSearchIteams().getText();
+        Assert.assertEquals(text, data.get("SearchValue"));
+    }
+
+    @When("the user search for  {string} in the search bar.")
+    public void theUserSearchForInTheSearchBar(String arg0) {
+        homePage = new HomePage(driver);
+        homePage.getBox().sendKeys(arg0);
+        homePage.getSearch().sendKeys(Keys.ENTER);
+    }
+
+    @Then("results for{string}")
+    public void resultsFor(String arg0) {
+        String text = homePage.getSearchIteams().getText();
+        System.out.println(text);
+        Assert.assertEquals(text, arg0);
+
     }
 }

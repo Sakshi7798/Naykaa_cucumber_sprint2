@@ -13,22 +13,33 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
-    public WebElement getSearchBox() {
-        return searchBox;
-    }
-
-    public WebElement getSearchResult() {
-        return searchResult;
-    }
-
-    @FindBy(id = "twotabsearchtextbox")
+    @FindBy(xpath = "//input[@class='css-1upamjb']")
+    @Getter
     WebElement searchBox;
-
-    @FindBy(xpath = "//span[@class='a-color-state a-text-bold']")
+    @FindBy(xpath = "//h1[@class='page-title-search']")
+    @Getter
     WebElement searchResult;
 
+    @FindBy(xpath = "//input[@class='css-1upamjb']")
+    @Getter
+    WebElement Search;
+    @FindBy(xpath = "//div[@class='title']")
+    @Getter
+    WebElement Error;
 
+    @FindBy(xpath = "//input[@class='css-1upamjb']")
+    @Getter
+    WebElement Box;
+    @FindBy(id="title-listing")
+    @Getter
+    WebElement SearchIteams;
 
+    @FindBy(className = "css-19j7d8y")
+    @Getter
+    WebElement LakmeBox;
+    @FindBy(id="(//h1[@class=\"css-mrgb7e\"])[1]")
+    @Getter
+    WebElement LakmeSearch;
 
 
 }
