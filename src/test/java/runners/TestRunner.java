@@ -8,10 +8,10 @@ import org.testng.annotations.DataProvider;
         glue = "steps", publish = true
         , plugin = {"pretty", "html:target/cucumber-reports.html"
 ,"json:target/cucumber-reports.json"},
-        monochrome = true,tags = "@smoke")
+        monochrome = true)
 public class TestRunner extends AbstractTestNGCucumberTests {
 
-    @DataProvider
+    @DataProvider(parallel = true)
     public Object[][] scenarios() {
         return super.scenarios();
     }
